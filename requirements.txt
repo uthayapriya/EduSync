@@ -1,5 +1,5 @@
 streamlit
 langchain
 langchain_groq
-fdpf2
+fpdf2
 dotenv
