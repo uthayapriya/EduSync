@@ -104,17 +104,18 @@ def generate_question_paper():
                 # PDF generation
                 class PDF(FPDF):
                     def header(self):
-                        self.set_font("Arial", "B", 12)
-                        self.cell(0, 10, "Question Paper", align="C", new_x=self.l_margin, new_y=self.y + 10)
+                        self.set_font("Helvetica", "B", 12)
+                        new_y = round(self.y + 10, 2)
+                        self.cell(0, 10, "Question Paper", align="C", new_x=self.l_margin, new_y=new_y)
 
                     def footer(self):
                         self.set_y(-15)
-                        self.set_font("Arial", "I", 8)
+                        self.set_font("Helvetica", "I", 8)
                         self.cell(0, 10, f"Page {self.page_no()}", align="C")
 
                 pdf = PDF()
                 pdf.add_page()
-                pdf.set_font("Arial", size=12)
+                pdf.set_font("Helvetica", size=12)
                 for line in lines:
                     pdf.multi_cell(0, 10, line.encode('latin-1', errors='replace').decode('latin-1'))
 
