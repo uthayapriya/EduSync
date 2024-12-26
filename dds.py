@@ -117,7 +117,7 @@ def generate_question_paper():
                 pdf.add_page()
                 pdf.set_font("Helvetica", size=12)
                 for line in lines:
-                    pdf.multi_cell(0, 10, line.encode('latin-1', errors='replace').decode('latin-1'))
+                    pdf.multi_cell(190, 10, line.encode('latin-1', errors='replace').decode('latin-1'))
 
                 pdf_file = "Question_Paper.pdf"
                 pdf.output(pdf_file)
