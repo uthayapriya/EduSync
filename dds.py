@@ -106,7 +106,7 @@ def generate_question_paper():
                     def header(self):
                         self.set_font("Helvetica", "B", 12)
                         new_y = round(self.y + 10, 2)
-                        self.cell(0, 10, "Question Paper", align="C", new_x=round(self.l_margin), new_y=new_y)
+                        self.cell(0, 10, "Question Paper", align="C")
 
                     def footer(self):
                         self.set_y(-15)
