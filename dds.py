@@ -105,7 +105,7 @@ def generate_question_paper():
                 class PDF(FPDF):
                     def header(self):
                         self.set_font("Arial", "B", 12)
-                        self.cell(0, 10, "Question Paper", align="C", ln=True)
+                        self.cell(0, 10, "Question Paper", align="C", new_x=self.l_margin, new_y=self.y + 10)
 
                     def footer(self):
                         self.set_y(-15)
@@ -116,7 +116,7 @@ def generate_question_paper():
                 pdf.add_page()
                 pdf.set_font("Arial", size=12)
                 for line in lines:
-                    pdf.multi_cell(190, 10, line.encode('latin-1', errors='replace').decode('latin-1'))
+                    pdf.multi_cell(0, 10, line.encode('latin-1', errors='replace').decode('latin-1'))
 
                 pdf_file = "Question_Paper.pdf"
                 pdf.output(pdf_file)
