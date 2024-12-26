@@ -74,6 +74,7 @@ def generate_question_paper():
 
             Output a question paper covering all topics evenly with the specified question types, difficulty, and weightage.
             Include at the beginning marks distribution, clear instructions, and a variety of question formats with accurate marks allocation.
+            Strictly generate all the questions.
             """
 
             merged_data = {
@@ -115,7 +116,7 @@ def generate_question_paper():
                 pdf.add_page()
                 pdf.set_font("Arial", size=12)
                 for line in lines:
-                    pdf.multi_cell(0, 10, line)
+                    pdf.multi_cell(0, 10, line.encode('latin-1', errors='replace').decode('latin-1'))
 
                 pdf_file = "Question_Paper.pdf"
                 pdf.output(pdf_file)
